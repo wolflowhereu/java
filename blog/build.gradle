@@ -1,0 +1,63 @@
+apply plugin: 'war'
+apply plugin: 'jetty'
+
+dependencies {
+
+    compile project(':core')
+
+    compile("org.springframework:spring-core:${springVersion}")
+    compile("org.springframework:spring-beans:${springVersion}")
+    compile("org.springframework:spring-context:${springVersion}")
+
+    compile("org.springframework:spring-aop:${springVersion}")
+    compile("org.aspectj:aspectjrt:1.7.4")
+    compile("org.aspectj:aspectjweaver:1.8.1")
+
+    compile("org.springframework:spring-tx:${springVersion}")
+    compile("org.springframework:spring-orm:${springVersion}")
+
+    compile("javax.validation:validation-api:1.1.0.Final")
+    compile("org.hibernate:hibernate-validator:4.3.2.Final")
+
+    compile("org.springframework:spring-web:${springVersion}")
+    compile("org.springframework:spring-webmvc:${springVersion}")
+
+    compile("mysql:mysql-connector-java:${mysqlJdbcVersion}")
+    compile("org.apache.tomcat:tomcat-jdbc:${tomcatJdbcVersion}")
+    compile("org.springframework:spring-jdbc:${springVersion}")
+
+    compile("org.springframework.data:spring-data-jpa:${springJpaVersion}")
+    compile("org.hibernate:hibernate-core:${hibernateVersion}")
+    compile("org.hibernate:hibernate-entitymanager:${hibernateVersion}")
+    compile("org.hibernate:hibernate-validator:${hibernateValidatorVersion}")
+    compile("org.hibernate.javax.persistence:hibernate-jpa-2.0-api:${hibernateJpaVersion}")
+
+    compile("com.whalin:Memcached-Java-Client:${memcachedVersion}")
+    compile("com.whalin:Memcached-Java-Client:${memcachedVersion}")
+
+    compile("redis.clients:jedis:${jedisVersion}")
+    compile("org.springframework.data:spring-data-redis:${springRedisVersion}")
+
+    testCompile("org.springframework:spring-test:${springVersion}")
+
+    providedCompile("javax.servlet:javax.servlet-api:3.0.1")
+    providedCompile("javax.servlet.jsp:jsp-api:2.2")
+    providedRuntime("org.eclipse.jetty.aggregate:jetty-webapp:${jettyVersion}")
+    providedRuntime("org.eclipse.jetty:jetty-jsp:${jettyVersion}")
+}
+
+
+javadoc {
+    options.charSet = 'UTF-8'
+    source = sourceSets.main.java
+    destinationDir = file("doc")
+}
+
+jettyRun {
+    httpPort = 8080
+    stopPort = 8089
+    reload = "automatic"
+    scanIntervalSeconds = 1
+} 
+  
+	

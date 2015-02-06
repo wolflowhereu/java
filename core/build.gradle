@@ -1,0 +1,24 @@
+apply plugin: 'war'
+
+
+dependencies {
+
+    compile("commons-codec:commons-codec:1.9")
+    compile("commons-io:commons-io:2.3")
+
+    compile("com.fasterxml.jackson.core:jackson-core:${jacksonVersion}")
+    compile("com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}")
+    compile("com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}")
+
+    compile("org.apache.httpcomponents:httpclient:${httpClientVersion}")
+    compile("org.apache.httpcomponents:httpmime:${httpClientVersion}")
+
+    compile("joda-time:joda-time:2.5")
+
+    providedCompile("org.eclipse.jetty.aggregate:jetty-webapp:${jettyVersion}")
+    providedCompile("org.eclipse.jetty:jetty-jsp:${jettyVersion}")
+
+}
+
+  
+	
