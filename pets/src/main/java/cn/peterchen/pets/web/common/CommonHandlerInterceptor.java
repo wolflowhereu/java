@@ -14,6 +14,7 @@ import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Map;
 
 
 /**
@@ -28,7 +29,14 @@ public class CommonHandlerInterceptor extends HandlerInterceptorAdapter {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         String servletPath = request.getServletPath();
-        System.out.println(servletPath);
+        StringBuffer sb = new StringBuffer();
+        sb.append(servletPath+"?");
+        Map<String, String[]> map = request.getParameterMap();
+        for(String key : map.keySet()){
+            sb.append(key+"=" +map.get(key));
+        }
+        System.out.println(servletPath+sb.toString());
+        request.setAttribute("param", servletPath+sb.toString());
         //默认
         if (!StringUtils.startsWith(servletPath, "/api") || StringUtils.equals(servletPath, "/api/user/register")) {
             return super.preHandle(request, response, handler);

@@ -1,0 +1,2 @@
+include "core", "blog", "pets"
+rootProject.name = "wolflowhereu"

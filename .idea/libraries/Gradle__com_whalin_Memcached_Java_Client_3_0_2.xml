@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: com.whalin:Memcached-Java-Client:3.0.2">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.whalin/Memcached-Java-Client/3.0.2/3ec350bcdf15dabf58804e0ef7f32a889ae6ef64/Memcached-Java-Client-3.0.2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.whalin/Memcached-Java-Client/3.0.2/6813954567370f1466cfa1030134a9f9baa70b39/Memcached-Java-Client-3.0.2-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

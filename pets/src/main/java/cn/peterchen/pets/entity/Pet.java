@@ -19,13 +19,14 @@ public class Pet extends IdEntity<Long>{
     private int realistic;
     private int conventional;
     private int investigative;
-    private int level;
-    private int speed;
-    private int hungry;
-    private int tired;
-    private int mood;
-    private int health;
-    private int cleaness;
+    private int level = 1;
+    private int experience;
+    private int speed = 1;
+    private int hungry = 100;
+    private int tired = 100;
+    private int mood = 100;
+    private int health = 100;
+    private int cleaness = 100;
 
     public long getUid() {
         return uid;
@@ -105,6 +106,14 @@ public class Pet extends IdEntity<Long>{
 
     public void setLevel(int level) {
         this.level = level;
+    }
+
+    public int getExperience() {
+        return experience;
+    }
+
+    public void setExperience(int experience) {
+        this.experience = experience;
     }
 
     public int getSpeed() {

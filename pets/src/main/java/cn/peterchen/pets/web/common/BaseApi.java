@@ -3,6 +3,8 @@ package cn.peterchen.pets.web.common;
 import cn.peterchen.pets.common.CommonException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 /**
  * Created by fanHB on 15-1-30.
@@ -12,7 +14,7 @@ public class BaseApi {
     @ResponseBody
     public Object handleException(CommonException exception) {
         exception.printStackTrace();
-
+        System.out.println(RequestContextHolder.getRequestAttributes().getAttribute("param", RequestAttributes.SCOPE_REQUEST));
         System.out.println("CommonException exception");
         return "CommonException exception";
     }

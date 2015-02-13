@@ -1,5 +1,6 @@
 package cn.peterchen.pets.web;
 
+import cn.peterchen.pets.common.WebContext;
 import cn.peterchen.pets.entity.User;
 import cn.peterchen.pets.service.UserService;
 import cn.peterchen.pets.web.common.Response;
@@ -27,4 +28,23 @@ public class UserApi {
         response.setResult(user);
         return response;
     }
+
+    @RequestMapping(value = "/modifyBaseInfo")
+    @ResponseBody
+    public Response modifyBaseInfo(String name, int gender) {
+
+        User user = userService.modifyBaseInfo(name, gender);
+        Response<User> response = new Response<>();
+        response.setResult(user);
+        return response;
+
+    }
+
+    @RequestMapping(value = "/getInitData")
+    @ResponseBody
+    public Response getInitData(){
+return null;
+    }
+
+
 }
